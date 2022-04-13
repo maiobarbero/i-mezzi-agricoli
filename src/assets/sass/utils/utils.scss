@@ -1,0 +1,40 @@
+.img-res {
+	width: 100%;
+}
+.text-white {
+	color: #fff;
+}
+.text-center {
+	text-align: center;
+	width: 100%;
+}
+// Margin & padding variables
+$spaceamounts: (
+	'0': '0',
+	'2': '.2',
+	'5': '.5',
+	'10': '1',
+	'15': '1.5',
+	'20': '2',
+	'50': '5',
+);
+$sides: (
+	't': 'top',
+	'b': 'bottom',
+	'l': 'left',
+	'r': 'right',
+	'': 'all',
+);
+
+@each $number, $space in $spaceamounts {
+	@each $prefix, $value in $sides {
+		$property: if($prefix == '', '', -#{$value});
+
+		.m#{$prefix}-#{$number} {
+			margin#{$property}: #{$space}rem !important;
+		}
+		.p#{$prefix}-#{$number} {
+			padding#{$property}: #{$space}rem !important;
+		}
+	}
+}

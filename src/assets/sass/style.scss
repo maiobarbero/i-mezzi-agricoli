@@ -1,0 +1,21 @@
+/*!
+    Theme Name: Patronus
+    Author: Matteo Barbero - Maio Web Design
+    Author URI: https://www.maiowebdesign.it
+    Site: https://www.maiowebdesign.it
+    Description: Responsive WordPress theme with page transitions and animations.
+    Version: 1.0
+    License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Text Domain: patronus
+    Domain Path: /languages
+    Tags: grid-layout, blog, portfolio, custom-menu, featured-images
+
+    This theme, like WordPress, is licensed under the GPL.
+    Use it to make something cool, have fun, and share what you've learned with others.
+*/
+@import './variables/variables.scss';
+@import './utils/functions.scss';
+@import './utils/grid.scss';
+@import './utils/utils.scss';
+@import './utils/wordpress.scss';

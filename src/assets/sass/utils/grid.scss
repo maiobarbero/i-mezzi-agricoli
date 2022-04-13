@@ -1,0 +1,44 @@
+.container {
+	max-width: 120rem;
+}
+.grid {
+	display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+}
+.grid--center {
+	justify-content: center;
+}
+.col {
+	flex: 1;
+}
+.col-12 {
+	width: 12%;
+}
+.col-25 {
+	width: 25%;
+}
+.col-33 {
+	width: 33.333%;
+}
+.col-50 {
+	width: 50%;
+}
+.col-100 {
+	width: 100%;
+}
+@media (max-width: 768px) {
+	.col-12,
+	.col-25 {
+		width: 50%;
+	}
+	.col-33,
+	.col-50 {
+		width: 100%;
+	}
+}
+@media (max-width: 425px) {
+	[classˆ='col'] {
+		width: 100%;
+	}
+}

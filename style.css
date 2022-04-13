@@ -1,0 +1,409 @@
+@charset "UTF-8";
+/*
+    Theme Name: Patronus
+    Author: Matteo Barbero - Maio Web Design
+    Author URI: https://www.maiowebdesign.it
+    Site: https://www.maiowebdesign.it
+    Description: Responsive WordPress theme with page transitions and animations.
+    Version: 1.0
+    License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Text Domain: patronus
+    Domain Path: /languages
+    Tags: grid-layout, blog, portfolio, custom-menu, featured-images
+
+    This theme, like WordPress, is licensed under the GPL.
+    Use it to make something cool, have fun, and share what you've learned with others.
+*/
+html {
+  font-size: 0.5952380952vw;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 1.3020833333vw;
+  }
+}
+@media (max-width: 425px) {
+  html {
+    font-size: 2.3529411765vw;
+  }
+}
+.container {
+  max-width: 120rem;
+}
+
+.grid {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.grid--center {
+  justify-content: center;
+}
+
+.col {
+  flex: 1;
+}
+
+.col-12 {
+  width: 12%;
+}
+
+.col-25 {
+  width: 25%;
+}
+
+.col-33 {
+  width: 33.333%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-100 {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .col-12,
+.col-25 {
+    width: 50%;
+  }
+
+  .col-33,
+.col-50 {
+    width: 100%;
+  }
+}
+@media (max-width: 425px) {
+  [classˆ=col] {
+    width: 100%;
+  }
+}
+.img-res {
+  width: 100%;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+  width: 100%;
+}
+
+.mt-0 {
+  margin-top: 0rem !important;
+}
+
+.pt-0 {
+  padding-top: 0rem !important;
+}
+
+.mb-0 {
+  margin-bottom: 0rem !important;
+}
+
+.pb-0 {
+  padding-bottom: 0rem !important;
+}
+
+.ml-0 {
+  margin-left: 0rem !important;
+}
+
+.pl-0 {
+  padding-left: 0rem !important;
+}
+
+.mr-0 {
+  margin-right: 0rem !important;
+}
+
+.pr-0 {
+  padding-right: 0rem !important;
+}
+
+.m-0 {
+  margin: 0rem !important;
+}
+
+.p-0 {
+  padding: 0rem !important;
+}
+
+.mt-2 {
+  margin-top: .2rem !important;
+}
+
+.pt-2 {
+  padding-top: .2rem !important;
+}
+
+.mb-2 {
+  margin-bottom: .2rem !important;
+}
+
+.pb-2 {
+  padding-bottom: .2rem !important;
+}
+
+.ml-2 {
+  margin-left: .2rem !important;
+}
+
+.pl-2 {
+  padding-left: .2rem !important;
+}
+
+.mr-2 {
+  margin-right: .2rem !important;
+}
+
+.pr-2 {
+  padding-right: .2rem !important;
+}
+
+.m-2 {
+  margin: .2rem !important;
+}
+
+.p-2 {
+  padding: .2rem !important;
+}
+
+.mt-5 {
+  margin-top: .5rem !important;
+}
+
+.pt-5 {
+  padding-top: .5rem !important;
+}
+
+.mb-5 {
+  margin-bottom: .5rem !important;
+}
+
+.pb-5 {
+  padding-bottom: .5rem !important;
+}
+
+.ml-5 {
+  margin-left: .5rem !important;
+}
+
+.pl-5 {
+  padding-left: .5rem !important;
+}
+
+.mr-5 {
+  margin-right: .5rem !important;
+}
+
+.pr-5 {
+  padding-right: .5rem !important;
+}
+
+.m-5 {
+  margin: .5rem !important;
+}
+
+.p-5 {
+  padding: .5rem !important;
+}
+
+.mt-10 {
+  margin-top: 1rem !important;
+}
+
+.pt-10 {
+  padding-top: 1rem !important;
+}
+
+.mb-10 {
+  margin-bottom: 1rem !important;
+}
+
+.pb-10 {
+  padding-bottom: 1rem !important;
+}
+
+.ml-10 {
+  margin-left: 1rem !important;
+}
+
+.pl-10 {
+  padding-left: 1rem !important;
+}
+
+.mr-10 {
+  margin-right: 1rem !important;
+}
+
+.pr-10 {
+  padding-right: 1rem !important;
+}
+
+.m-10 {
+  margin: 1rem !important;
+}
+
+.p-10 {
+  padding: 1rem !important;
+}
+
+.mt-15 {
+  margin-top: 1.5rem !important;
+}
+
+.pt-15 {
+  padding-top: 1.5rem !important;
+}
+
+.mb-15 {
+  margin-bottom: 1.5rem !important;
+}
+
+.pb-15 {
+  padding-bottom: 1.5rem !important;
+}
+
+.ml-15 {
+  margin-left: 1.5rem !important;
+}
+
+.pl-15 {
+  padding-left: 1.5rem !important;
+}
+
+.mr-15 {
+  margin-right: 1.5rem !important;
+}
+
+.pr-15 {
+  padding-right: 1.5rem !important;
+}
+
+.m-15 {
+  margin: 1.5rem !important;
+}
+
+.p-15 {
+  padding: 1.5rem !important;
+}
+
+.mt-20 {
+  margin-top: 2rem !important;
+}
+
+.pt-20 {
+  padding-top: 2rem !important;
+}
+
+.mb-20 {
+  margin-bottom: 2rem !important;
+}
+
+.pb-20 {
+  padding-bottom: 2rem !important;
+}
+
+.ml-20 {
+  margin-left: 2rem !important;
+}
+
+.pl-20 {
+  padding-left: 2rem !important;
+}
+
+.mr-20 {
+  margin-right: 2rem !important;
+}
+
+.pr-20 {
+  padding-right: 2rem !important;
+}
+
+.m-20 {
+  margin: 2rem !important;
+}
+
+.p-20 {
+  padding: 2rem !important;
+}
+
+.mt-50 {
+  margin-top: 5rem !important;
+}
+
+.pt-50 {
+  padding-top: 5rem !important;
+}
+
+.mb-50 {
+  margin-bottom: 5rem !important;
+}
+
+.pb-50 {
+  padding-bottom: 5rem !important;
+}
+
+.ml-50 {
+  margin-left: 5rem !important;
+}
+
+.pl-50 {
+  padding-left: 5rem !important;
+}
+
+.mr-50 {
+  margin-right: 5rem !important;
+}
+
+.pr-50 {
+  padding-right: 5rem !important;
+}
+
+.m-50 {
+  margin: 5rem !important;
+}
+
+.p-50 {
+  padding: 5rem !important;
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen and (min-width: 960px) {
+  body .alignfull {
+    width: auto;
+    max-width: 1000%;
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+  }
+
+  body .alignwide {
+    width: auto;
+    max-width: 1000%;
+    margin-right: calc(25% - 25vw);
+    margin-left: calc(25% - 25vw);
+  }
+
+  .alignwide img,
+.alignfull img {
+    display: block;
+    margin: 0 auto;
+    width: 100vw;
+  }
+}
