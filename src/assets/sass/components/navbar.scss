@@ -1,0 +1,36 @@
+.navbar {
+	width: 100%;
+	height: 10rem;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+.menu__toggle {
+	height: 5rem;
+	width: 5rem;
+	position: relative;
+	transition: all 1s $transitionBounce;
+	cursor: pointer;
+
+	&.active {
+		transform: rotate(225deg);
+	}
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		height: 0.8rem;
+		background-color: $secondaryColor;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%) rotate(90deg);
+		width: 100%;
+		height: 0.8rem;
+		background-color: $secondaryColor;
+	}
+}

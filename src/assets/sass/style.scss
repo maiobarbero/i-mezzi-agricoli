@@ -1,5 +1,5 @@
 /*!
-    Theme Name: Patronus
+    Theme Name: I Mezzi Agricoli
     Author: Matteo Barbero - Maio Web Design
     Author URI: https://www.maiowebdesign.it
     Site: https://www.maiowebdesign.it
@@ -14,8 +14,12 @@
     This theme, like WordPress, is licensed under the GPL.
     Use it to make something cool, have fun, and share what you've learned with others.
 */
+@import './utils/reset.scss';
 @import './variables/variables.scss';
 @import './utils/functions.scss';
 @import './utils/grid.scss';
 @import './utils/utils.scss';
 @import './utils/wordpress.scss';
+
+@import './components/navbar.scss';
+@import './template-parts/content-image.scss';

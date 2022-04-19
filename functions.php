@@ -1,8 +1,6 @@
 <?php
 
 /**
- * Patronus
- * 
  * @package Patronus
  * @version 1.0.0
  */
@@ -46,6 +44,7 @@ if ( ! function_exists( 'patronus_setup' ) ) {
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'align-wide' );
         add_theme_support( 'responsive-embeds' );
+        add_theme_support( 'post-formats', array( 'image', 'video' ) );
 
         // Custom menu areas
         register_nav_menus( array(
@@ -90,8 +89,8 @@ if ( ! function_exists( 'patronus_scripts' ) ) {
      
         if ( is_singular() && get_option( 'thread_comments' ) )	{ wp_enqueue_script( 'comment-reply' ); }
 
-        wp_enqueue_style('flickity', get_template_directory_uri() .'dist/assets/css/flickity.min.css', false);
-        wp_enqueue_style('locomotive', get_template_directory_uri() .'dist/assets/css/locomotive.css', false);
+        wp_enqueue_style('flickity', get_template_directory_uri() .'/dist/assets/css/flickity.min.css', false);
+        wp_enqueue_style('locomotive', get_template_directory_uri() .'/dist/assets/css/locomotive.css', false);
         wp_enqueue_style( 'patronus-style', get_template_directory_uri() . '/style.css');
 
        

@@ -33,6 +33,7 @@
 		"cssnano": "^5.1.7",
 		"del": "^6.0.0",
 		"gulp": "^4.0.2",
+		"gulp-concat": "^2.6.1",
 		"gulp-if": "^3.0.0",
 		"gulp-imagemin": "^7.1.0",
 		"gulp-penthouse": "^0.2.0",

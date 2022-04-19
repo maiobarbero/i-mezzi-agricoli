@@ -24,7 +24,7 @@ import del from 'del'
 const paths = {
 	styles: {
 		src: ['src/assets/sass/style.scss'],
-		dest: '../Patronus',
+		dest: '../i-mezzi-agricoli',
 	},
 	images: {
 		src: 'src/assets/images/**/*.{jpg,jpeg,png,svg,gif,webp}',
