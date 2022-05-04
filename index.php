@@ -1,12 +1,14 @@
-<?php  get_header();?>
+<?php 
 
-<div data-scroll-section>
+$context          = Timber::context();
+$context['posts'] = new Timber\PostQuery();
+$templates        = array( 'index.twig' );
 
-    <!-- CONTENUTO -->
-    <div data-scroll>
-    </div>
-    <!-- CONTENUTO -->
+$context['logo'] = new Timber\Image('/dist/assets/images/IMA_logo.svg');
 
-</div>
+if ( is_home() ) {
+	array_unshift( $templates, 'front-page.twig', 'home.twig' );
+}
+Timber::render( $templates, $context );
 
-<?php get_footer(); ?>
+?>

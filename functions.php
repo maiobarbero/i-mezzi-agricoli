@@ -5,6 +5,41 @@
  * @version 1.0.0
  */
 
+ /* ------------------------------------------------------------------- *
+ * Timber setup
+ /* ------------------------------------------------------------------- */
+
+ if ( ! class_exists( 'Timber' ) ) {
+
+	add_action(
+		'admin_notices',
+		function() {
+			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
+		}
+	);
+
+	add_filter(
+		'template_include',
+		function( $template ) {
+			return get_stylesheet_directory() . '/static/no-timber.html';
+		}
+	);
+	return;
+}
+
+
+Timber::$dirname = 'dist/assets/views';
+Timber::$autoescape = false;
+
+function add_to_context( $context ) {
+
+		$context['menu']  = new Timber\Menu();
+
+		return $context;
+	}
+add_filter( 'timber/context', 'add_to_context' );
+
+
 /* ------------------------------------------------------------------- *
 * Login logo.
 /* ------------------------------------------------------------------- */
@@ -47,9 +82,9 @@ if ( ! function_exists( 'patronus_setup' ) ) {
         add_theme_support( 'post-formats', array( 'image', 'video' ) );
 
         // Custom menu areas
-        register_nav_menus( array(
-            'header' => esc_html__( 'Header', 'patronus' )
-        ) );
+        // register_nav_menus( array(
+        //     'header' => esc_html__( 'Header', 'patronus' )
+        // ) );
 
         // Load theme languages
         load_theme_textdomain( 'patronus', get_template_directory().'/languages' );
@@ -91,6 +126,7 @@ if ( ! function_exists( 'patronus_scripts' ) ) {
 
         wp_enqueue_style('flickity', get_template_directory_uri() .'/dist/assets/css/flickity.min.css', false);
         wp_enqueue_style('locomotive', get_template_directory_uri() .'/dist/assets/css/locomotive.css', false);
+        wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
         wp_enqueue_style( 'patronus-style', get_template_directory_uri() . '/style.css');
 
        
