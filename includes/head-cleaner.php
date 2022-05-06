@@ -10,7 +10,14 @@ function mwd_remove_script_version( $src ){
 add_filter( 'script_loader_src', 'mwd_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', 'mwd_remove_script_version', 15, 1 );
 
+
 function mwd_wp_head_cleanup(){
+
+    // Vanilla JS ONLY
+    // if ( !is_admin() ){
+    //     wp_deregister_script( 'jquery' );
+    //     wp_deregister_script( 'l10n' );
+    // }
 
     remove_filter('wp_robots', 'wp_robots_max_image_preview_large');
 

@@ -126,7 +126,6 @@ if ( ! function_exists( 'patronus_scripts' ) ) {
 
         wp_enqueue_style('flickity', get_template_directory_uri() .'/dist/assets/css/flickity.min.css', false);
         wp_enqueue_style('locomotive', get_template_directory_uri() .'/dist/assets/css/locomotive.css', false);
-        wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
         wp_enqueue_style( 'patronus-style', get_template_directory_uri() . '/style.css');
 
        
