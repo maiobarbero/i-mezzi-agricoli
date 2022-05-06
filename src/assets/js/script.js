@@ -76,6 +76,7 @@ jQuery(function ($) {
 	// ! Burger
 	$('.menu__toggle').on('click', function () {
 		$('.menu__toggle').toggleClass('active')
+		$('.menu__container').toggleClass('active')
 	})
 
 	// function maxHeightBlock() {
