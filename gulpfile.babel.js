@@ -19,8 +19,11 @@ import uglify from 'gulp-uglify'
 
 import wpPot from 'gulp-wp-pot'
 
+import browserSync from 'browser-sync'
+
 import del from 'del'
 
+const projectURL = 'http://i-mezzi-agricoli.local/'
 const paths = {
 	styles: {
 		src: ['src/assets/sass/style.scss'],
@@ -81,6 +84,7 @@ export const styles = () => {
 		.pipe(postcss(processors))
 		.pipe(replace('/*!', '/*'))
 		.pipe(gulp.dest(paths.styles.dest))
+		.pipe(browserSync.stream({ match: '**/*.css' }))
 }
 
 export const images = () => {
@@ -88,6 +92,7 @@ export const images = () => {
 		.src(paths.images.src)
 		.pipe(gulpif(PRODUCTION, imagemin()))
 		.pipe(gulp.dest(paths.images.dest))
+		.pipe(browserSync.stream({ match: '**/*.{jpg,jpeg,png,svg,gif,webp}' }))
 }
 
 export const scripts = () => {
@@ -120,6 +125,7 @@ export const scripts = () => {
 		)
 		.pipe(gulpif(PRODUCTION, uglify()))
 		.pipe(gulp.dest(paths.scripts.dest))
+		.pipe(browserSync.stream({ match: '**/*.js' }))
 }
 
 export const pot = () => {
@@ -144,7 +150,15 @@ export const watch = () => {
 	gulp.watch('src/assets/js/**', gulp.series(scripts))
 	gulp.watch('**/*.php')
 	gulp.watch(paths.images.src, gulp.series(images))
-	gulp.watch(paths.other.src, gulp.series(copy))
+	browserSync.init({
+		proxy: projectURL,
+		open: true,
+		injectChanges: true,
+		watch: true,
+		watchOptions: {
+			debounceDelay: 1000, // This introduces a small delay when watching for file change events to avoid triggering too many reloads
+		},
+	})
 }
 
 export const dev = gulp.series(
