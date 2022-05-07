@@ -143,13 +143,21 @@ export const pot = () => {
 export const clean = () => del(['dist'])
 
 export const copy = () => {
-	return gulp.src(paths.other.src).pipe(gulp.dest(paths.other.dest))
+	return gulp
+		.src(paths.other.src)
+		.pipe(gulp.dest(paths.other.dest))
+		.pipe(
+			browserSync.reload({
+				stream: true,
+			})
+		)
 }
 export const watch = () => {
 	gulp.watch('src/assets/sass/**', styles)
 	gulp.watch('src/assets/js/**', gulp.series(scripts))
 	gulp.watch('**/*.php')
 	gulp.watch(paths.images.src, gulp.series(images))
+	gulp.watch(paths.other.src, gulp.series(copy))
 	browserSync.init({
 		proxy: projectURL,
 		open: true,
