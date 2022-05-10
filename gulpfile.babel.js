@@ -13,6 +13,7 @@ import gulpif from 'gulp-if'
 const sass = require('gulp-sass')(require('sass'))
 
 import imagemin from 'gulp-imagemin'
+import webp from 'gulp-webp'
 
 import webpack from 'webpack-stream'
 import uglify from 'gulp-uglify'
@@ -30,6 +31,10 @@ const paths = {
 		dest: '../i-mezzi-agricoli',
 	},
 	images: {
+		src: 'src/assets/images/**/*.{jpg,jpeg,png,svg,gif,webp}',
+		dest: 'dist/assets/images',
+	},
+	webp: {
 		src: 'src/assets/images/**/*.{jpg,jpeg,png,svg,gif,webp}',
 		dest: 'dist/assets/images',
 	},
@@ -92,6 +97,8 @@ export const images = () => {
 		.src(paths.images.src)
 		.pipe(gulpif(PRODUCTION, imagemin()))
 		.pipe(gulp.dest(paths.images.dest))
+		.pipe(webp())
+		.pipe(gulp.dest(paths.webp.dest))
 		.pipe(browserSync.stream({ match: '**/*.{jpg,jpeg,png,svg,gif,webp}' }))
 }
 

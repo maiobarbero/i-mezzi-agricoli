@@ -5,6 +5,7 @@
 	transform: translateX(100%);
 	transition: all 1s ease-in-out;
 	position: fixed;
+	z-index: 99;
 
 	&.active {
 		opacity: 1;

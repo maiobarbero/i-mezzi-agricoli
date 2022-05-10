@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<section class='cover'>
+
+    <img srcset="{{ cover|towebp }}"  alt="I mezzi Agricoli" class='cover__background'>  
+    <h2 class='cover__title'>Professione&Passione</h2>
+    <img srcset='{{ logo_tagliato|towebp }}' class='cover__logo'>
+    <img srcset="{{ divider|towebp }}" class='cover__divider'>
+
+</section>
+
+
+
+
+{% endblock %}
