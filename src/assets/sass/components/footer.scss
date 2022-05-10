@@ -1,0 +1,40 @@
+#footer {
+	background-color: $black;
+	color: $white;
+	padding: 5rem;
+}
+.footer__col {
+	padding: 2rem;
+	p {
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 130.9%;
+		letter-spacing: 2px;
+	}
+	strong {
+		font-weight: 700;
+	}
+	a {
+		color: $white;
+		text-decoration: none;
+	}
+	h3 {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 130.9%;
+		text-align: right;
+		letter-spacing: 2px;
+	}
+}
+.footer__copy {
+	font-weight: lighter;
+	font-size: 14px;
+	line-height: 180.9%;
+	letter-spacing: 2px;
+	color: $white;
+	margin-top: 10rem;
+
+	a {
+		color: $primaryColor;
+	}
+}

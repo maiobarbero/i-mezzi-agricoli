@@ -13,6 +13,7 @@ require_once ('includes/timber-setup.php');
 require_once ('includes/theme-setup.php');
 require_once ('includes/enqueues.php');
 require_once ('includes/cpt.php');
+require_once ('includes/widget-area.php');
  
 /* ------------------------------------------------------------------- *
 * Login logo.

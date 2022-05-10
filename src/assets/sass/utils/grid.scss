@@ -1,5 +1,6 @@
 .container {
 	max-width: 120rem;
+	margin: 0 auto;
 }
 .grid {
 	display: flex;
@@ -27,6 +28,7 @@
 .col-100 {
 	width: 100%;
 }
+
 @media (max-width: 768px) {
 	.col-12,
 	.col-25 {

@@ -6,6 +6,8 @@ $templates        = array( 'index.twig' );
 
 $context['logo'] = new Timber\Image('wp-content/themes/i-mezzi-agricoli/dist/assets/images/IMA_logo.svg');
 
+
+
 if ( is_home() ) {
 	array_unshift( $templates, 'front-page.twig', 'home.twig' );
 }

@@ -28,6 +28,9 @@ Timber::$autoescape = false;
 function add_to_context( $context ) {
 
 		$context['menu']  = new Timber\Menu();
+		$context['footer_widget_1'] = Timber::get_widgets('footer_widget_1');
+		$context['footer_widget_2'] = Timber::get_widgets('footer_widget_2');
+		$context['footer_widget_3'] = Timber::get_widgets('footer_widget_3');
 
 		return $context;
 	}
