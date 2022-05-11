@@ -10,6 +10,7 @@ function patronus_custom_post_type() {
                 'public'      => true,
                 'has_archive' => true,
                 'rewrite'     => array( 'slug' => 'edicola' ),
+                'supports'    => array( 'title', 'thumbnail' )
         )
     );
 }
