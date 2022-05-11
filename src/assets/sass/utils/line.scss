@@ -1,0 +1,44 @@
+.line-after {
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 70%;
+		height: 2px;
+		width: 80%;
+		background-color: $secondaryColor;
+	}
+}
+
+.line-before {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: -10%;
+		width: 20%;
+		transform: translateY(-50%);
+		height: 2px;
+		background-color: $secondaryColor;
+	}
+}
+
+.line-center {
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: -10%;
+		transform: translateY(-50%);
+		width: 120%;
+		height: 2px;
+		background-color: $secondaryColor;
+	}
+}

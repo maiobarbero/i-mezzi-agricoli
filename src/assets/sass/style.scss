@@ -16,16 +16,18 @@
 */
 
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap);
+
+@import './variables/variables.scss';
+
 @import './utils/reset.scss';
 @import './utils/mixin.scss';
 @import './utils/functions.scss';
 @import './utils/grid.scss';
 @import './utils/utils.scss';
 @import './utils/wordpress.scss';
+@import './utils/line.scss';
 
 @import './global/font.scss';
-
-@import './variables/variables.scss';
 
 @import './components/navbar.scss';
 @import './components/menuContainer.scss';

@@ -32,17 +32,6 @@
 	color: $white;
 	text-transform: uppercase;
 	z-index: 2;
-
-	&::after {
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: -10%;
-		transform: translateY(-50%);
-		width: 120%;
-		height: 2px;
-		background-color: $secondaryColor;
-	}
 }
 .cover__logo {
 	position: absolute;
@@ -56,4 +45,71 @@
 	bottom: 0;
 	left: 0;
 	z-index: 2;
+}
+
+.news {
+	margin-top: 13rem;
+	position: relative;
+}
+.news__title {
+	@extend %h2;
+
+	text-transform: uppercase;
+	margin-bottom: 2.7rem;
+}
+.news__loop {
+	position: relative;
+}
+.news__loop__post {
+	aspect-ratio: 1/1;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: calc(25% - 2rem);
+	display: flex;
+	align-items: flex-end;
+	padding: 1.3rem;
+	position: relative;
+	z-index: 1;
+
+	&:not(:last-child) {
+		margin-right: 2rem;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+		z-index: 0;
+	}
+}
+.news__loop__post__title {
+	@extend %h5;
+
+	color: $white;
+	position: relative;
+	z-index: 1;
+}
+
+.news__loop_square {
+	background-color: $primaryColor;
+	height: 150%;
+	width: 40%;
+	position: absolute;
+	right: 0;
+	top: -20px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	padding: 2.7rem;
+	z-index: 0;
+
+	p {
+		text-transform: uppercase;
+		color: $white;
+		font-size: 1.8rem;
+	}
 }

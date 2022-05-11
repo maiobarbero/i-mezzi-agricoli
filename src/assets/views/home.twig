@@ -2,16 +2,36 @@
 
 {% block content %}
 
-<section class='cover'>
+	<section class='cover'>
 
-    <img srcset="{{ cover|towebp }}"  alt="I mezzi Agricoli" class='cover__background'>  
-    <h2 class='cover__title'>Professione&Passione</h2>
-    <img srcset='{{ logo_tagliato|towebp }}' class='cover__logo'>
-    <img srcset="{{ divider|towebp }}" class='cover__divider'>
+		<img srcset="{{ cover|towebp }}" alt="I mezzi Agricoli" class='cover__background'>
+		<h2 class='cover__title line-center'>Professione&Passione</h2>
+		<img srcset='{{ logo_tagliato|towebp }}' class='cover__logo'>
+		<img srcset="{{ divider|towebp }}" class='cover__divider'>
 
-</section>
+	</section>
+
+	<section class='news container'>
+		<h2 class='news__title line-before'>le ultime news</h2>
+
+		<div class='news__loop grid'>
+
+			{% for post in posts %}
+
+				<a href={{post.link}} class='news__loop__post col-25' style="background-image:url({{post.thumbnail|towebp}})">
+					<h3 class='news__loop__post__title'>
+						{{post.title}}
+					</h3>
+				</a>
 
 
+			{% endfor %}
+
+			<div class='news__loop_square'>
+				<p class='line-after'>i mezzi agricoli</p>
+			</div>
+		</div>
+	</section>
 
 
 {% endblock %}
