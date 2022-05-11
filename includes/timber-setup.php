@@ -28,6 +28,7 @@ Timber::$autoescape = false;
 function add_to_context( $context ) {
 
 		$context['menu']  = new Timber\Menu();
+		$context['logo'] = new Timber\Image('wp-content/themes/i-mezzi-agricoli/dist/assets/images/IMA_logo.svg');
 		$context['footer_widget_1'] = Timber::get_widgets('footer_widget_1');
 		$context['footer_widget_2'] = Timber::get_widgets('footer_widget_2');
 		$context['footer_widget_3'] = Timber::get_widgets('footer_widget_3');
