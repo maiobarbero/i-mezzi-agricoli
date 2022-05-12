@@ -7,8 +7,15 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 9999999;
+	z-index: 100;
+	align-items: center;
+	transition: all 0.6s ease-in-out;
+
+	&.scroll {
+		background-color: $primaryColor;
+	}
 }
+
 .menu__toggle {
 	height: 5rem;
 	width: 5rem;

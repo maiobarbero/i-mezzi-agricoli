@@ -70,11 +70,21 @@ jQuery(function ($) {
 				location.reload() // refresh page
 			}
 		})
+
+		// ! Change nav color
+		$(document).scroll(function () {
+			if ($(document).scrollTop() > 700) {
+				$('.navbar').addClass('scroll')
+			} else {
+				$('.navbar').removeClass('scroll')
+			}
+		})
 	}
 	loadScripts()
 
 	// ! Burger
 	$('.menu__toggle').on('click', function () {
+		$('.navbar').toggleClass('scroll')
 		$('.menu__toggle').toggleClass('active')
 		$('.menu__container').toggleClass('active')
 	})
