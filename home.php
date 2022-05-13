@@ -10,4 +10,11 @@ $args = array('posts_per_page' => 4);
 
 $context['posts'] = new Timber\PostQuery($args);
 
+$edicolaArgs = array(
+    'post_type' => 'riviste',
+    'posts_per_page' => 5,
+
+);
+$context['edicola'] = new Timber\PostQuery($edicolaArgs);
+
 Timber::render( 'home.twig', $context );

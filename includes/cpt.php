@@ -1,7 +1,7 @@
 <?php 
 
 function patronus_custom_post_type() {
-    register_post_type('wporg_product',
+    register_post_type('riviste',
         array(
             'labels'      => array(
                 'name'          => __('Riviste', 'patronus'),

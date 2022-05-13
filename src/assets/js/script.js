@@ -57,36 +57,38 @@ jQuery(function ($) {
 	// document.addEventListener('swup:transitionStart', event => {
 	// 	scroll.scrollTo('top')
 	// })
+	$(window).on('resize', function () {
+		if ($(window).width() > 480 && $(window).width() < 768) {
+			location.reload() // refresh page
+		}
+	})
 
-	function loadScripts() {
-		// ! Flickity
-		// var flkty = new Flickity('.main-carousel', {
-		// TODO options
-		// })
+	// ! Flickity
+	// var flkty = new Flickity('.main-carousel', {
+	// TODO options
+	// })
 
-		// ! Refresh when mobile
-		$(window).on('resize', function () {
-			if ($(window).width() > 480 && $(window).width() < 768) {
-				location.reload() // refresh page
-			}
-		})
+	// ! Refresh when mobile
 
-		// ! Change nav color
-		$(document).scroll(function () {
-			if ($(document).scrollTop() > 700) {
-				$('.navbar').addClass('scroll')
-			} else {
-				$('.navbar').removeClass('scroll')
-			}
-		})
-	}
-	loadScripts()
+	// ! Change nav color
+	$(document).scroll(function () {
+		if ($(document).scrollTop() > 700) {
+			$('.navbar').addClass('scroll')
+		} else {
+			$('.navbar').removeClass('scroll')
+		}
+	})
 
 	// ! Burger
 	$('.menu__toggle').on('click', function () {
-		$('.navbar').toggleClass('scroll')
+		if ($(document).scrollTop() < 700) {
+			$('.navbar').toggleClass('scroll')
+		}
+
+		// $('.navbar').toggleClass('scroll')
 		$('.menu__toggle').toggleClass('active')
 		$('.menu__container').toggleClass('active')
+		$('body').toggleClass('no-scroll')
 	})
 
 	// function maxHeightBlock() {

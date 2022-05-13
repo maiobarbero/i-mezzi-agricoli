@@ -24,7 +24,6 @@
 					</h3>
 				</a>
 
-
 			{% endfor %}
 
 			<div class='news__loop_square'>
@@ -33,5 +32,37 @@
 		</div>
 	</section>
 
+	<section class='section-green'>
+		<div class='edicola container'>
+			<h2 class='edicola__title line-before'>
+				in edicola
+			</h2>
 
+			<div class='edicola__loop grid'>
+
+				{% for post in edicola %}
+
+
+					<a href={{post.link}} class='edicola__loop__cover col-20'>
+						<img srcset="{{post.thumbnail|towebp}}" alt='{{post.title}}' class="img-res">
+						<h3 class=' edicola__loop__cover__title'>{{post.title}}</h3>
+					</a>
+
+				{% endfor %}
+
+			</div>
+		</div>
+	</section>
+
+	<section class='single__section container grid'>
+		<div class="single__section__picture col">
+			<img class='img-res' alt="{{posts[0].title}}" srcset="{{posts[0].thumbnail|towebp}}">
+		</div>
+		<div class="single__section__text col-50">
+			<h3>{{posts[0].title}}</h3>
+			<p>{{posts[0].preview.read_more('<br>LEGGI TUTTO')}}</p>
+		</div>
+
+
+	</section>
 {% endblock %}

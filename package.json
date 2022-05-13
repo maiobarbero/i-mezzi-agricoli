@@ -54,11 +54,7 @@
 		"yargs": "^17.4.1"
 	},
 	"dependencies": {
-		"@swup/body-class-plugin": "^1.0.2",
-		"@swup/gtm-plugin": "^1.0.2",
-		"@swup/head-plugin": "^1.2.0",
 		"flickity": "^3.0.0",
-		"locomotive-scroll": "^4.1.4",
-		"swup": "^2.0.14"
+		"include-media": "^1.4.10"
 	}
 }

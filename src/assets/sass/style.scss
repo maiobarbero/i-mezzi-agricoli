@@ -19,6 +19,10 @@
 
 @import './variables/variables.scss';
 
+@import './global/responsive.scss';
+@import './global/font.scss';
+@import './global/body.scss';
+
 @import './utils/reset.scss';
 @import './utils/mixin.scss';
 @import './utils/functions.scss';
@@ -26,8 +30,6 @@
 @import './utils/utils.scss';
 @import './utils/wordpress.scss';
 @import './utils/line.scss';
-
-@import './global/font.scss';
 
 @import './components/navbar.scss';
 @import './components/menuContainer.scss';
