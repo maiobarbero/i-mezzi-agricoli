@@ -1,6 +1,9 @@
 body {
+	@extend %p;
+	color: $black;
 	max-width: 100vw;
-	overflow-x: hidden;
+	overflow-x: hidden !important;
+	font-family: 'Montserrat', sans-serif !important;
 }
 body.no-scroll {
 	height: 100vh;

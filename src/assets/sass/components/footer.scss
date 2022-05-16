@@ -11,6 +11,12 @@
 		font-size: 20px;
 		line-height: 130.9%;
 		letter-spacing: 2px;
+
+		@include media('<tablet') {
+			font-size: 1.6rem;
+			text-align: center;
+			word-break: break-all;
+		}
 	}
 	strong {
 		font-weight: 700;
@@ -26,6 +32,10 @@
 		text-align: right;
 		letter-spacing: 2px;
 	}
+	img {
+		text-align: right;
+		margin-top: 3rem;
+	}
 }
 .footer__copy {
 	font-weight: lighter;
@@ -37,5 +47,10 @@
 
 	a {
 		color: $primaryColor;
+	}
+	p {
+		@include media('<tablet') {
+			text-align: center !important;
+		}
 	}
 }

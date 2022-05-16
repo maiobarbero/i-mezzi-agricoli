@@ -1,13 +1,12 @@
-<?php  get_header();?>
-
 <?php 
 
-while ( have_posts() ) : the_post();
-	get_template_part( 'dist/assets/template_parts/content', get_post_format() );
-endwhile;
+$context          = Timber::context();
+$timber_post     = Timber::get_post();
+$context['post'] = $timber_post;
+$context['divider'] = new Timber\Image('wp-content/themes/i-mezzi-agricoli/dist/assets/images/divisore.png');
 
 
-?>
 
+$templates        = array( 'article.twig' );
 
-<?php get_footer(); ?>
+Timber::render( $templates, $context );

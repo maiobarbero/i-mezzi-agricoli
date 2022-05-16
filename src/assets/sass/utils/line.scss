@@ -10,6 +10,9 @@
 		height: 2px;
 		width: 80%;
 		background-color: $secondaryColor;
+		@include media('<phone') {
+			display: none;
+		}
 	}
 }
 
@@ -25,6 +28,9 @@
 		transform: translateY(-50%);
 		height: 2px;
 		background-color: $secondaryColor;
+		@include media('<phone') {
+			display: none;
+		}
 	}
 }
 
@@ -40,5 +46,9 @@
 		width: 120%;
 		height: 2px;
 		background-color: $secondaryColor;
+
+		@include media('<phone') {
+			display: none;
+		}
 	}
 }

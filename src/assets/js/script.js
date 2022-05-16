@@ -72,7 +72,7 @@ jQuery(function ($) {
 
 	// ! Change nav color
 	$(document).scroll(function () {
-		if ($(document).scrollTop() > 700) {
+		if ($(document).scrollTop() > 300) {
 			$('.navbar').addClass('scroll')
 		} else {
 			$('.navbar').removeClass('scroll')
@@ -81,11 +81,7 @@ jQuery(function ($) {
 
 	// ! Burger
 	$('.menu__toggle').on('click', function () {
-		if ($(document).scrollTop() < 700) {
-			$('.navbar').toggleClass('scroll')
-		}
-
-		// $('.navbar').toggleClass('scroll')
+		$('.navbar').toggleClass('active')
 		$('.menu__toggle').toggleClass('active')
 		$('.menu__container').toggleClass('active')
 		$('body').toggleClass('no-scroll')

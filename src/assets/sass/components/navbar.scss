@@ -13,6 +13,9 @@
 	padding: 5rem;
 
 	&.scroll {
+		background-color: $white;
+	}
+	&.active {
 		background-color: $primaryColor;
 	}
 }
@@ -39,7 +42,7 @@
 		transform: translateY(-50%);
 		width: 100%;
 		height: 0.8rem;
-		background-color: $secondaryColor;
+		background-color: $black;
 
 		@include media('<phone') {
 			height: 0.5rem;
@@ -52,7 +55,7 @@
 		transform: translateY(-50%) rotate(90deg);
 		width: 100%;
 		height: 0.8rem;
-		background-color: $secondaryColor;
+		background-color: $black;
 
 		@include media('<phone') {
 			height: 0.5rem;

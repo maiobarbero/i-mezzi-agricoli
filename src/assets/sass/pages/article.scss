@@ -1,0 +1,42 @@
+.cover.small {
+	height: 40vh;
+}
+
+.article {
+	@extend %p;
+	margin-top: 4rem;
+}
+.article__date {
+	@extend %h5;
+	color: $primaryColor;
+	margin-bottom: 4rem;
+}
+.article__title {
+	@extend %h2;
+	margin-bottom: 4rem;
+}
+.sidebar {
+	margin-top: 4rem;
+	padding-left: 4rem;
+
+	@include media('<tablet') {
+		width: 100%;
+		padding-left: 0;
+	}
+}
+.sidebar__share {
+	border: 2px solid $secondaryColor;
+	padding: 2rem;
+	position: sticky;
+	top: 12rem;
+}
+.sidebar__share h5 {
+	@extend %h5;
+
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 4rem;
+}
+.sidebar__share__icons {
+	text-align: center;
+}
