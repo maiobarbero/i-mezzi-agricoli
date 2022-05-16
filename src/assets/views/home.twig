@@ -1,68 +1,72 @@
-{% extends "base.twig" %}
+{% extends "base.twig" %} {% block content %}
 
-{% block content %}
+<section class="cover">
+	<img
+		srcset="{{ cover|towebp }}"
+		alt="I mezzi Agricoli"
+		class="cover__background"
+	/>
+	<h2 class="cover__title line-center">Professione&Passione</h2>
+	<img srcset="{{ logo_tagliato|towebp }}" class="cover__logo" />
+	<img srcset="{{ divider|towebp }}" class="cover__divider" />
+</section>
 
-	<section class='cover'>
+<section class="news container">
+	<h2 class="news__title line-before">le ultime news</h2>
 
-		<img srcset="{{ cover|towebp }}" alt="I mezzi Agricoli" class='cover__background'>
-		<h2 class='cover__title line-center'>Professione&Passione</h2>
-		<img srcset='{{ logo_tagliato|towebp }}' class='cover__logo'>
-		<img srcset="{{ divider|towebp }}" class='cover__divider'>
+	<div class="news__loop grid">
+		{% for post in posts %}
 
-	</section>
+		<a
+			href="{{ post.link }}"
+			class="news__loop__post col-25"
+			style="background-image:url({{ post.thumbnail | towebp }})"
+		>
+			<h3 class="news__loop__post__title">
+				{{ post.title }}
+			</h3>
+		</a>
 
-	<section class='news container'>
-		<h2 class='news__title line-before'>le ultime news</h2>
+		{% endfor %}
 
-		<div class='news__loop grid'>
+		<div class="news__loop_square">
+			<p class="line-after">i mezzi agricoli</p>
+		</div>
+	</div>
+</section>
 
-			{% for post in posts %}
+<section class="section-green">
+	<div class="edicola container">
+		<h2 class="edicola__title line-before">in edicola</h2>
 
-				<a href={{post.link}} class='news__loop__post col-25' style="background-image:url({{post.thumbnail|towebp}})">
-					<h3 class='news__loop__post__title'>
-						{{post.title}}
-					</h3>
-				</a>
+		<div class="edicola__loop grid">
+			{% for post in edicola %}
+
+			<a href="{{ post.link }}" class="edicola__loop__cover col-20">
+				<img
+					srcset="{{post.thumbnail|towebp}}"
+					alt="{{ post.title }}"
+					class="img-res"
+				/>
+				<h3 class="edicola__loop__cover__title">{{ post.title }}</h3>
+			</a>
 
 			{% endfor %}
-
-			<div class='news__loop_square'>
-				<p class='line-after'>i mezzi agricoli</p>
-			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
-	<section class='section-green'>
-		<div class='edicola container'>
-			<h2 class='edicola__title line-before'>
-				in edicola
-			</h2>
-
-			<div class='edicola__loop grid'>
-
-				{% for post in edicola %}
-
-
-					<a href={{post.link}} class='edicola__loop__cover col-20'>
-						<img srcset="{{post.thumbnail|towebp}}" alt='{{post.title}}' class="img-res">
-						<h3 class=' edicola__loop__cover__title'>{{post.title}}</h3>
-					</a>
-
-				{% endfor %}
-
-			</div>
-		</div>
-	</section>
-
-	<section class='single__section container grid'>
-		<div class="single__section__picture col">
-			<img class='img-res' alt="{{posts[0].title}}" srcset="{{posts[0].thumbnail|towebp}}">
-		</div>
-		<div class="single__section__text col-50">
-			<h3>{{posts[0].title}}</h3>
-			<p>{{posts[0].preview.read_more('<br>LEGGI TUTTO')}}</p>
-		</div>
-
-
-	</section>
+<section class="single__section container grid">
+	<div class="single__section__picture col">
+		<img
+			class="img-res"
+			alt="{{ posts[0].title }}"
+			srcset="{{posts[0].thumbnail|towebp}}"
+		/>
+	</div>
+	<div class="single__section__text col-50">
+		<h3>{{ posts[0].title }}</h3>
+		<p>{{posts[0].preview.read_more('<br />LEGGI TUTTO')}}</p>
+	</div>
+</section>
 {% endblock %}

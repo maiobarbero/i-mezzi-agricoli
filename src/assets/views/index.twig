@@ -1,5 +1,31 @@
-{% extends "base.twig" %}
+{% extends "base.twig" %} {% block content %}
 
-{% block content %}
-	
+<section class="single__section container grid">
+	<div class="single__section__picture col">
+		<img
+			class="img-res"
+			alt="{{ posts[0].title }}"
+			srcset="{{posts[0].thumbnail|towebp}}"
+		/>
+	</div>
+	<div class="single__section__text col-50">
+		<h3>{{ posts[0].title }}</h3>
+		<p>{{posts[0].preview.read_more('<br />LEGGI TUTTO')}}</p>
+	</div>
+</section>
+<div class="container">
+    <div class="post-container"></div>
+	    <div class="grid">
+
+			{% for post in posts %}
+			<div class="col-50 archive__post">
+                <img srcset="{{post.thumbnail|towebp}}" alt="{{ post.title }}" class="'img-res">
+				<h2>{{ post.title }}</h2>
+                <p>{{posts[0].preview.read_more('<br>LEGGI TUTTO')}}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
 {% endblock %}

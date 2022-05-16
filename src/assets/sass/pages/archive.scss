@@ -1,0 +1,19 @@
+.post-container {
+	margin-top: 8rem;
+}
+.archive__post {
+	padding: 10rem;
+	img {
+		width: 100%;
+		aspect-ratio: 1;
+		object-fit: cover;
+	}
+
+	h2 {
+		@extend %h5;
+	}
+
+	p {
+		@extend %p;
+	}
+}
